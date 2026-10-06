@@ -1,0 +1,30 @@
+# 换行符统一策略
+# 原因：这个工程同时被 Keil uVision 和 VS Code 编辑，
+# 不统一的话每次提交都会因为「整个文件都变了」而产生假的 diff。
+
+# 默认：仓库里一律存 LF，检出时按下面的规则决定
+* text=auto eol=lf
+
+# C 源码 / Keil 工程文件：检出成 Windows 的 CRLF（Keil 最稳）
+*.c        text eol=crlf
+*.h        text eol=crlf
+*.s        text eol=crlf
+*.uvprojx  text eol=crlf
+*.uvoptx   text eol=crlf
+*.ioc      text eol=crlf
+*.mxproject text eol=crlf
+
+# 文档 / 配置：用 LF
+*.md    text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+*.json  text eol=lf
+
+# 二进制文件：绝不做换行转换，否则文件会损坏
+*.hex      binary
+*.bin      binary
+*.axf      binary
+*.elf      binary
+*.uvguix.* binary
+*.xlsx     binary
+*.zip      binary
