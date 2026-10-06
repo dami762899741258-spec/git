@@ -1,0 +1,47 @@
+# dot files
+/.vscode/launch.json
+/.settings
+/.eide/log
+/.eide.usr.ctx.json
+
+# project out
+/build
+/bin
+/obj
+/out
+
+# eide template
+*.ept
+*.eide-template
+
+# ===== Keil MDK 编译输出 =====
+# 目标输出目录（目录名 = Keil Target 名，以后新增 Target 记得在这里补一行）
+/FOC-3.0t/
+/FOC 3.0T/
+/DebugConfig/
+
+# 中间文件 / 列表文件（都可重新编译生成，不必进仓库）
+*.o
+*.d
+*.crf
+*.dep
+*.lnp
+*.htm
+*.map
+*.lst
+*.iex
+*.axf
+*.elf
+*.build_log.htm
+
+# 固件产物：默认不进仓库。想发布固件时用 git add -f 强制添加
+*.hex
+*.bin
+
+# Keil 的用户界面布局（每台电脑不一样，必须忽略）
+*.uvguix.*
+
+# 调试器 / J-Link 日志
+JLinkLog.txt
+JLinkSettings.ini
+*.bak
